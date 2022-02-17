@@ -7,7 +7,7 @@ import UserSignupPage from "./UserSignupPage";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <UserSignupPage />
   </React.StrictMode>,
   document.getElementById("root")
 );
