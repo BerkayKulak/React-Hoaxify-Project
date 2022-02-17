@@ -31,30 +31,50 @@ class UserSignupPage extends React.Component {
 
   render() {
     return (
-      <form>
-        <h1>Sign Up</h1>
-        <div>
-          <label>Username</label>
-          <input name="username" onChange={this.onChange} />
-        </div>
-        <div>
-          <label>Display Name</label>
-          <input name="displayName" onChange={this.onChange} />
-        </div>
-        <div>
-          <label>Password</label>
-          <input name="password" onChange={this.onChange} type="password" />
-        </div>
-        <div>
-          <label>Password Confirm</label>
-          <input
-            name="passwordRepeat"
-            onChange={this.onChange}
-            type="password"
-          />
-        </div>
-        <button onClick={this.onClickSignup}>Sign Up</button>
-      </form>
+      <div className="container">
+        <form>
+          <h1 className="text-center">Sign Up</h1>
+          <div className="form-group">
+            <label>Username</label>
+            <input
+              class="form-control"
+              name="username"
+              onChange={this.onChange}
+            />
+          </div>
+          <div>
+            <label>Display Name</label>
+            <input
+              className="form-control"
+              name="displayName"
+              onChange={this.onChange}
+            />
+          </div>
+          <div>
+            <label>Password</label>
+            <input
+              className="form-control"
+              name="password"
+              onChange={this.onChange}
+              type="password"
+            />
+          </div>
+          <div>
+            <label>Password Confirm</label>
+            <input
+              className="form-control"
+              name="passwordRepeat"
+              onChange={this.onChange}
+              type="password"
+            />
+          </div>
+          <div className="text-center">
+            <button className="btn btn-primary" onClick={this.onClickSignup}>
+              Sign Up
+            </button>
+          </div>
+        </form>
+      </div>
     );
   }
 }
