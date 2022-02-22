@@ -52,7 +52,7 @@ class UserSignupPage extends React.Component {
 
   render() {
     const { errors } = this.state;
-    const { username, displayName } = errors;
+    const { username, displayName,password } = errors;
     return (
       <div className="container">
         <form>
@@ -69,15 +69,13 @@ class UserSignupPage extends React.Component {
             error={displayName}
             onChange={this.onChange}
           />
-          <div className="form-group">
-            <label>Password</label>
-            <input
-              className="form-control"
-              name="password"
-              onChange={this.onChange}
-              type="password"
-            />
-          </div>
+             <Input
+            name="password"
+            label="Password"
+            error={password}
+            onChange={this.onChange}
+            type="password"
+          />
           <div className="form-group">
             <label>Password Confirm</label>
             <input
