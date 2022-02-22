@@ -1,6 +1,7 @@
 import React from "react";
 import { signup } from "../api/apiCall";
 import Input from "../components/Input";
+import { withTranslation } from "react-i18next";
 class UserSignupPage extends React.Component {
   state = {
     username: null,
@@ -12,12 +13,13 @@ class UserSignupPage extends React.Component {
   };
 
   onChange = (event) => {
+    const { t } = this.props;
     const { name, value } = event.target;
     const errors = { ...this.state.errors };
     errors[name] = undefined;
     if (name === "password" || name === "passwordRepeat") {
       if (name === "password" && value !== this.state.passwordRepeat) {
-        errors.passwordRepeat = "Password mismatch";
+        errors.passwordRepeat = t("Password mismatch");
       } else if (name === "passwordRepeat" && value !== this.state.password) {
         errors.passwordRepeat = "Password mismatch";
       } else {
@@ -62,32 +64,33 @@ class UserSignupPage extends React.Component {
   render() {
     const { errors } = this.state;
     const { username, displayName, password, passwordRepeat } = errors;
+    const { t } = this.props;
     return (
       <div className="container">
         <form>
-          <h1 className="text-center">Sign Up</h1>
+          <h1 className="text-center">{t("Sign Up")}</h1>
           <Input
             name="username"
-            label="Username"
+            label={t("Username")}
             error={username}
             onChange={this.onChange}
           />
           <Input
             name="displayName"
-            label="Display Name"
+            label={t("Display Name")}
             error={displayName}
             onChange={this.onChange}
           />
           <Input
             name="password"
-            label="Password"
+            label={t("Password")}
             error={password}
             onChange={this.onChange}
             type="password"
           />
           <Input
             name="passwordRepeat"
-            label="Password Repeat"
+            label={t("Password Repeat")}
             error={passwordRepeat}
             onChange={this.onChange}
             type="password"
@@ -105,7 +108,7 @@ class UserSignupPage extends React.Component {
               ) : (
                 ""
               )}
-              Sign Up
+              {t("Sign Up")}
             </button>
           </div>
         </form>
@@ -114,4 +117,6 @@ class UserSignupPage extends React.Component {
   }
 }
 
-export default UserSignupPage;
+const UserSignupPageWithTranslation = withTranslation()(UserSignupPage);
+
+export default UserSignupPageWithTranslation;
