@@ -1,5 +1,5 @@
 import React from "react";
-import { signup,changeLanguage } from "../api/apiCall";
+import { signup } from "../api/apiCall";
 import Input from "../components/Input";
 import { withTranslation } from "react-i18next";
 class UserSignupPage extends React.Component {
@@ -61,12 +61,6 @@ class UserSignupPage extends React.Component {
     this.setState({ pendingApiCall: false });
   };
 
-  onChangeLanguage = (language) => {
-    const { i18n } = this.props;
-    i18n.changeLanguage(language);
-    changeLanguage(language);
-  };
-
   render() {
     const { errors } = this.state;
     const { username, displayName, password, passwordRepeat } = errors;
@@ -116,20 +110,6 @@ class UserSignupPage extends React.Component {
               )}
               {t("Sign Up")}
             </button>
-          </div>
-          <div>
-            <img
-              style={{ width: "100px", cursor: "pointer" }}
-              src="https://icons.iconarchive.com/icons/wikipedia/flags/256/TR-Turkey-Flag-icon.png"
-              alt="tr"
-              onClick={() => this.onChangeLanguage("tr")}
-            ></img>
-            <img
-              style={{ width: "100px", cursor: "pointer" }}
-              src="https://images.thdstatic.com/productImages/db985bd3-d47b-4b1a-a270-a1bd84e55b62/svn/seasonal-designs-house-flags-rf3n-64_1000.jpg"
-              alt="en"
-              onClick={() => this.onChangeLanguage("en")}
-            ></img>
           </div>
         </form>
       </div>
