@@ -7,11 +7,15 @@ import UserSignupPage from "./pages/UserSignupPage";
 import "./bootstrap-override.scss";
 import "./i18n";
 import LoginPage from "./pages/LoginPage";
+import LanguageSelector from "./components/LanguageSelector";
 //import "./pages/i18n";
 
 ReactDOM.render(
   <React.StrictMode>
-    <LoginPage />
+    <div>
+      <LoginPage />
+      <LanguageSelector />
+    </div>
   </React.StrictMode>,
   document.getElementById("root")
 );
