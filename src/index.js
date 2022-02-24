@@ -8,12 +8,16 @@ import "./bootstrap-override.scss";
 import "./i18n";
 import LoginPage from "./pages/LoginPage";
 import LanguageSelector from "./components/LanguageSelector";
+import ApiProgress from "./shared/ApiProgress";
 //import "./pages/i18n";
 
 ReactDOM.render(
   <React.StrictMode>
     <div>
-      <UserSignupPage />
+      <ApiProgress>
+        <UserSignupPage />
+      </ApiProgress>
+
       <LanguageSelector />
     </div>
   </React.StrictMode>,
