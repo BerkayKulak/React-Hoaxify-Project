@@ -12,7 +12,7 @@ class UserSignupPage extends React.Component {
     errors: {},
   };
 
-  onChange = (event) => {
+  onChange =  (event) => {
     const { t } = this.props;
     const { name, value } = event.target;
     const errors = { ...this.state.errors };
@@ -35,7 +35,7 @@ class UserSignupPage extends React.Component {
   onClickSignup = async (event) => {
     event.preventDefault();
 
-    const { username, displayName, password, passwordRepeat } = this.state;
+    const { username, displayName, password } = this.state;
 
     const body = {
       username,
