@@ -13,7 +13,7 @@ import LanguageSelector from "./components/LanguageSelector";
 ReactDOM.render(
   <React.StrictMode>
     <div>
-      <LoginPage />
+      <UserSignupPage />
       <LanguageSelector />
     </div>
   </React.StrictMode>,
